@@ -63,9 +63,9 @@ let twoSum_2 = function(nums, target) {
   return answerArr;
 };
 
-solution_1 = twoSum_1(numArray_1, targetNum_1);
-solution_2 = twoSum_1(numArray_2, targetNum_2);
-solution_3 = twoSum_1(numArray_3, targetNum_3);
+solution_1 = twoSum_2(numArray_1, targetNum_1);
+solution_2 = twoSum_2(numArray_2, targetNum_2);
+solution_3 = twoSum_2(numArray_3, targetNum_3);
 console.log(`Method 2, 1st example: ${solution_1}`);
 console.log(`Method 2, 2nd example: ${solution_2}`);
 console.log(`Method 2, 3rd example ${solution_3}`);
