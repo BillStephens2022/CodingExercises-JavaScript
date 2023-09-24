@@ -69,3 +69,26 @@ solution_3 = twoSum_2(numArray_3, targetNum_3);
 console.log(`Method 2, 1st example: ${solution_1}`);
 console.log(`Method 2, 2nd example: ${solution_2}`);
 console.log(`Method 2, 3rd example ${solution_3}`);
+
+// Solution 3: Not efficient, but it works, time complexity of O(n^2) because of the ".includes" method within the loop.
+const twoSum_3 = (nums, target) => {
+    answerArr = [];
+    for (let i=0; i < nums.length; i++) {
+        let currentNum = nums[i];
+        let complement = target - currentNum;
+        let numsSlice = nums.slice(i+1,);
+        if (numsSlice.includes(complement)) {
+            answerArr.push(nums.indexOf(currentNum));
+            answerArr.push(numsSlice.indexOf(complement) + i + 1);
+            return answerArr;
+        };
+    }
+    return [];
+}
+
+solution_1 = twoSum_3(numArray_1, targetNum_1);
+solution_2 = twoSum_3(numArray_2, targetNum_2);
+solution_3 = twoSum_3(numArray_3, targetNum_3);
+console.log(`Method 3, 1st example: ${solution_1}`);
+console.log(`Method 3, 2nd example: ${solution_2}`);
+console.log(`Method 3, 3rd example ${solution_3}`);
