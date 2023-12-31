@@ -5,8 +5,9 @@ Just some handy JavaScript functions/algorithms to solve some popular coding pro
 
 ## 'FizzBuzz' Example:
 
-```
 ### Solution1 (the common solution):
+
+```
 const fizzBuzz = (n) => {
     const answer = [];
     for (let i = 1; i <= n; i++) {
