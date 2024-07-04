@@ -224,5 +224,22 @@ const sortedByPages = books.slice().sort((a, b) => b.pages - a.pages);
 sortedByPages.map((book) => console.log("Book Title: ", book.title, "Pages: ", book.pages));
 
 
+// working with immutable Arrays
 
+// 1) Add book object to array
+const newBook = {
+    id: 6,
+    title: "Harry Potter and the Chamber of Secrets",
+    author: "J. K. Rowling",
+}
+// use spread operator to create a new array with the new book object
+const booksAfterAdd = [...books, newBook];
+booksAfterAdd.map((book) => console.log("Book Title: ", book.title));
 
+// Delete book object from array
+const booksAfterDelete = books.filter((book) => book.id !== 3); // Note that 'Dune' book (book id of 3) is removed from the array
+booksAfterDelete.map((book) => console.log("Book Title: ", book.title));
+
+// Update book object in array
+const booksAfterUpdate = booksAfterDelete.map((book) => book.id === 5 ? {...book, title: "Hello World"} : book);
+booksAfterUpdate.map((book) => console.log("Book Title: ", book.title));
