@@ -181,5 +181,48 @@ const adventureBooks = books.filter((book) => book.genres.includes("adventure"))
 adventureBooks.map((book) => console.log("Adventure Book: ", book.title));
 
 // reduce method
+const numArr = [1, 2, 3, 4, 5]; 
+const numArrTotal = numArr.reduce((acc, num) => acc + num, 0);
+console.log(numArrTotal);
+
+const pagesAllBooks = books.reduce((acc, book) => acc + book.pages, 0);
+console.log("Total Pages of all books: ", pagesAllBooks);
+
+// sort method
+const x = [3, 7, 1, 9, 2, 6];
+// ascending sort
+const sortedX = x.sort((a, b) => a - b);
+console.log(sortedX);
+//descending sort
+const descSortedX = x.sort((a, b) => b - a);
+console.log(descSortedX);
+// note that sort method mutates the original array (i.e. sorts it in place) so x is now sorted.
+// this method mutates the array and returns a reference to the same array.
+console.log(x);
+// if we don't want to mutate the original array, we can use the spread operator to create a new array
+const y = [3, 7, 1, 9, 2, 6];
+const sortedY = [...y].sort((a, b) => a - b);
+console.log(sortedY);
+console.log(y);
+
+// or we can use the slice method to create a new array
+/* the slice method in JavaScript is used to create a shallow copy of a portion of an array into a new array object. 
+It doesn't modify the original array. The method takes two optional arguments: the start index and the end index.
+
+Here’s how it works:
+
+Start Index (Optional): The index at which to begin the extraction. If omitted, the slice begins from the index 0.
+End Index (Optional): The index before which to end the extraction. The slice extracts up to but not including the end index. 
+If omitted, the slice extracts through the end of the array.
+*/
+const z = [3, 7, 1, 9, 2, 6];
+const sortedZ = z.slice().sort((a, b) => a - b);
+console.log(sortedZ);
+console.log(z);
+
+const sortedByPages = books.slice().sort((a, b) => b.pages - a.pages);
+sortedByPages.map((book) => console.log("Book Title: ", book.title, "Pages: ", book.pages));
+
+
 
 
